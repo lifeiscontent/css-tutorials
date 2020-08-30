@@ -7,8 +7,8 @@ export function buildRule(properties: React.CSSProperties, selector: string) {
     `${selector} {`,
     Object.entries(properties)
       .filter(([key, value]) => !!value)
-      .map(([key, value]) => `  ${camalToKebab(key)}: ${value}`)
-      .join(";\n"),
+      .map(([key, value]) => `  ${camalToKebab(key)}: ${value};`)
+      .join("\n"),
     "}\n",
   ].join("\n");
 }
