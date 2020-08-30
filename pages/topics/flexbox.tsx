@@ -2,32 +2,7 @@ import React, { useState, Fragment } from "react";
 import { withRouter } from "next/router";
 import { hsl } from "polished";
 import { OutputElement } from "../../components/output-element";
-import { camalToKebab } from "../../utils/string";
-
-function buildRule(properties: React.CSSProperties, selector: string) {
-  return [
-    `${selector} {`,
-    Object.entries(properties)
-      .filter(([key, value]) => !!value)
-      .map(([key, value]) => `  ${camalToKebab(key)}: ${value}`)
-      .join(";\n"),
-    "}\n",
-  ].join("\n");
-}
-
-function buildRules(
-  items: React.CSSProperties[],
-  linked: boolean,
-  selector: string
-) {
-  return linked
-    ? buildRule(items[0], selector)
-    : items
-        .map((item, index) =>
-          buildRule(item, `${selector}:nth-child(${index + 1})`)
-        )
-        .join("\n");
-}
+import { buildRule, buildRules } from "../../utils/string";
 
 function TopicDetailPage(props) {
   const [linked, setLinked] = useState(false);
@@ -165,8 +140,8 @@ ${buildRules(items, linked, ".flex-item")}
         }
 
         .flex-container {
-          width: 400px;
-          height: 400px;
+          width: 500px;
+          height: 500px;
           background-color: grey;
           transition: 300ms ease;
         }
