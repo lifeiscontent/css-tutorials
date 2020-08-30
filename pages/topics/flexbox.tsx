@@ -5,7 +5,7 @@ import { OutputElement } from "../../components/output-element";
 import { buildRule, buildRules } from "../../utils/string";
 
 function TopicDetailPage(props) {
-  const [linked, setLinked] = useState(false);
+  const [linked, setLinked] = useState(true);
   const [container, setContainer] = useState<React.CSSProperties>({
     display: "flex",
   });
