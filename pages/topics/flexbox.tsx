@@ -59,11 +59,15 @@ function TopicDetailPage(props) {
               />
             </label>
             {linked ? (
-              <Items onChange={onChangeItems} />
+              <Items title="Items" onChange={onChangeItems} />
             ) : (
               <Fragment>
                 {items.map((item, index) => (
-                  <Items onChange={onChangeItem(index)} key={index} />
+                  <Items
+                    onChange={onChangeItem(index)}
+                    key={index}
+                    title={`Item ${index + 1}`}
+                  />
                 ))}
               </Fragment>
             )}
@@ -221,7 +225,7 @@ function Container(props) {
 function Items(props) {
   return (
     <fieldset>
-      <legend>Items</legend>
+      <legend>{props.title}</legend>
       <p>
         <label>align-self</label>
         <select name="alignSelf" onChange={props.onChange}>
