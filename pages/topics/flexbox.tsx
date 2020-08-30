@@ -188,11 +188,11 @@ function Container(props) {
         <label>align-content</label>
         <select name="alignContent" onChange={props.onChange}>
           <option />
-          <option>flex-start</option>
-          <option>flex-end</option>
           <option>center</option>
-          <option>space-between</option>
+          <option>flex-end</option>
+          <option>flex-start</option>
           <option>space-around</option>
+          <option>space-between</option>
           <option>stretch</option>
         </select>
       </p>
@@ -200,10 +200,10 @@ function Container(props) {
         <label>align-items</label>
         <select name="alignItems" onChange={props.onChange}>
           <option />
-          <option>flex-start</option>
-          <option>flex-end</option>
-          <option>center</option>
           <option>baseline</option>
+          <option>center</option>
+          <option>flex-end</option>
+          <option>flex-start</option>
           <option>stretch</option>
         </select>
       </p>
@@ -211,10 +211,10 @@ function Container(props) {
         <label>flex-direction</label>
         <select name="flexDirection" onChange={props.onChange}>
           <option />
-          <option>row</option>
-          <option>row-reverse</option>
-          <option>column</option>
           <option>column-reverse</option>
+          <option>column</option>
+          <option>row-reverse</option>
+          <option>row</option>
         </select>
       </p>
       <p>
@@ -230,12 +230,13 @@ function Container(props) {
         <label>justify-content</label>
         <select name="justifyContent" onChange={props.onChange}>
           <option />
-          <option>flex-start</option>
-          <option>flex-end</option>
           <option>center</option>
-          <option>space-between</option>
+          <option>flex-end</option>
+          <option>flex-start</option>
           <option>space-around</option>
+          <option>space-between</option>
           <option>space-evenly</option>
+          <option>stretch</option>
         </select>
       </p>
     </fieldset>
@@ -251,10 +252,10 @@ function Items(props) {
         <select name="alignSelf" onChange={props.onChange}>
           <option />
           <option>auto</option>
-          <option>flex-start</option>
-          <option>flex-end</option>
-          <option>center</option>
           <option>baseline</option>
+          <option>center</option>
+          <option>flex-end</option>
+          <option>flex-start</option>
           <option>stretch</option>
         </select>
       </p>
@@ -290,8 +291,8 @@ function Items(props) {
         <select name="flexWrap" onChange={props.onChange}>
           <option />
           <option>nowrap</option>
-          <option>wrap</option>
           <option>wrap-reverse</option>
+          <option>wrap</option>
         </select>
       </p>
       <p>
